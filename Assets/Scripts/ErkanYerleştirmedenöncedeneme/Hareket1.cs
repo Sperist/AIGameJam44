@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class hareket1 : MonoBehaviour
 {
@@ -9,10 +10,14 @@ public class hareket1 : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 previousPosition;
     private float timer = 3f;
+    private bool sagabak = true;
+    private Vector3 scale;
+    Animator playerAnimator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
         previousPosition = transform.position;
         StartCoroutine(RecordPosition());
     }
@@ -21,13 +26,27 @@ public class hareket1 : MonoBehaviour
     {
         // sağ sol hareket
         float move = Input.GetAxis("Horizontal");
+        playerAnimator.SetFloat("Speed", Mathf.Abs(move));
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        if (move>0 && sagabak == false)
+        {
+            cevir();
+        }
+        if (move<0 && sagabak==true)
+        {
+            cevir();
+        }
 
         // zıplama
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
+            playerAnimator.SetBool("Jump", true);
+        }
+        if (Mathf.Approximately(rb.velocity.y,0)&&playerAnimator.GetBool("Jump"))
+        {
+            playerAnimator.SetBool("Jump", false);
         }
 
         // geri sarma
@@ -54,5 +73,13 @@ public class hareket1 : MonoBehaviour
             yield return new WaitForSeconds(timer);
             previousPosition = transform.position;
         }
+    }
+
+    void cevir()
+    {
+        sagabak = !sagabak;
+        scale= gameObject.transform.localScale;
+        scale.x = scale.x* -1;
+        gameObject.transform.localScale = scale;
     }
 }
