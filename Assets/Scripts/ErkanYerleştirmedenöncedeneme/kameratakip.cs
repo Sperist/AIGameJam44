@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class kameratakip : MonoBehaviour
+public class kameraoyuncutakip : MonoBehaviour
 {
     public Transform target;
 

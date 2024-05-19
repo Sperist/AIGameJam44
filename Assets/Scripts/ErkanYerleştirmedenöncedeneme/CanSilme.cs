@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class yenikalp : MonoBehaviour
+public class CanSilme : MonoBehaviour
 {
     public GameObject[] hearts;
     private int life;

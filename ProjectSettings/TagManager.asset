@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Hearts
   - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX

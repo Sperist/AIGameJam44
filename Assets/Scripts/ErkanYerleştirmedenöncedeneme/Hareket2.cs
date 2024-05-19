@@ -1,7 +1,8 @@
+
 using UnityEngine;
 using System.Collections;
 
-public class geridÃ¶nÃ¼ÅŸDeneme : MonoBehaviour
+public class hareket2 : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpForce = 5f;
@@ -19,11 +20,11 @@ public class geridÃ¶nÃ¼ÅŸDeneme : MonoBehaviour
 
     void Update()
     {
-        // saÄŸ sol hareket
+        // sað sol hareket
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
-        // zÄ±plama
+        // zýplama
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -31,13 +32,23 @@ public class geridÃ¶nÃ¼ÅŸDeneme : MonoBehaviour
         }
 
         // geri sarma
-        if (Input.GetButtonDown("GeriDÃ¶nÃ¼ÅŸ"))
+        if (Input.GetButtonDown("GeriDönüþ"))
         {
             transform.position = previousPosition;
         }
+
+        // Karakterin yürüme yönüne dönmesi
+        if (move < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0); // Karakteri sola döndürme
+        }
+        else if (move > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0); // Karakteri saða döndürme
+        }
     }
 
-    // yerde mi deÄŸil mi kontrol amaÃ§lÄ±
+    // yerde mi deðil mi kontrol amaçlý
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -46,7 +57,7 @@ public class geridÃ¶nÃ¼ÅŸDeneme : MonoBehaviour
         }
     }
 
-    // 3 saniye Ã¶nceki yeri sayar
+    // 3 saniye önceki yeri sayar
     IEnumerator RecordPosition()
     {
         while (true)
