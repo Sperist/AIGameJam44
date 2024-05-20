@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1716190514",
+        "python_version": "3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Windows\\System32\\ml-agents-env\\Scripts\\mlagents-learn config.yaml --run-id=BasicAgent --no-graphics --force",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.1+cpu",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1716190582"
+    },
+    "total": 67.694857,
+    "count": 1,
+    "self": 0.004648099999982946,
+    "children": {
+        "run_training.setup": {
+            "total": 0.06781340000000002,
+            "count": 1,
+            "self": 0.06781340000000002
+        },
+        "TrainerController.start_learning": {
+            "total": 67.62239550000001,
+            "count": 1,
+            "self": 0.0001316000000031181,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 67.6222494,
+                    "count": 1,
+                    "self": 67.6222494
+                },
+                "TrainerController._save_models": {
+                    "total": 1.4500000006023583e-05,
+                    "count": 1,
+                    "self": 1.4500000006023583e-05
+                }
+            }
+        }
+    }
+}
