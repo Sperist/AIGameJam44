@@ -890,11 +890,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 296d4e49-3e16-4fa4-ade5-82584c643336
+  cloudProjectId: 570221a7-1736-4e6e-bf86-a03032c442a8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: AIGameJam44
-  organizationId: sperist
+  projectName: Time Traveler's Adventure Main
+  organizationId: cansardag
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
