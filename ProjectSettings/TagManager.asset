@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - kalp
   - Water
   - UI
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 556453377
+    locked: 0
+  - name: "g\xF6sterge"
+    uniqueID: 1693266981
     locked: 0
